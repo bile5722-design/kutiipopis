@@ -188,13 +188,11 @@ details.more summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--m
 .pid{font-size:38px}
 .tabs .tab{font-size:12.5px}
 @media print{
-  #printArea table.t-box th:nth-child(1){width:8mm}
-  #printArea table.t-box th:nth-child(2){width:15mm}
-  #printArea table.t-box th:nth-child(3){width:24mm}
-  #printArea table.t-box th:nth-child(6){width:19mm}
-  #printArea table.t-box th:nth-child(7){width:19mm}
-  #printArea table.t-box tbody.bx{page-break-inside:avoid}
-  #printArea table.t-box tr.sr td{border-top:1px dotted #999}
+  #printArea table.t-box th:nth-child(1){width:9mm}
+  #printArea table.t-box th:nth-child(2){width:20mm}
+  #printArea table.t-box th:nth-child(3){width:18mm}
+  #printArea table.t-box th:nth-child(6){width:17mm}
+  #printArea table.t-box th:nth-child(7){width:22mm}
   #printArea table.t-box{font-size:10.5px}
   #printArea table.t-box td{vertical-align:top}
   #printArea table.t-sum th:nth-child(3){width:24mm}
@@ -11015,9 +11013,9 @@ function xlsxBlob(items){
   ord.forEach(function(k){ rows3.push([ml(k),byM[k].n,Object.keys(byM[k].po).length]); });
   rows3.push([t('totalAll'),items.length,nPOs(items)]);
   return buildXlsx([
-    {name:t('sheetBoxes'),rows:s1,widths:[fitW(s1.slice(1).map(function(r){return r[0];}),2,9,14),fitW(s1.slice(1).map(function(r){return r[1];}),5,14,24),fitW(s1.slice(1).map(function(r){return r[2];}),2,12,40),fitW(s1.slice(1).map(function(r){return r[3];}),3,30,70,1.15),8,19,16],wrap:[3,4]},
-    {name:t('sheetPO'),rows:rows2,widths:[fitW(rows2.slice(1).map(function(r){return r[0];}),5,14,24),fitW(rows2.slice(1).map(function(r){return r[1];}),2,12,40),10,19,19],bold:[rows2.length-1]},
-    {name:t('sheetModel'),rows:rows3,widths:[fitW(rows3.slice(1).map(function(r){return r[0];}),3,30,70,1.15),10,10],wrap:[0],bold:[rows3.length-1]}
+    {name:t('sheetBoxes'),rows:s1,widths:[14,14,26,48,10,19,16],wrap:[3,4]},
+    {name:t('sheetPO'),rows:rows2,widths:[14,26,10,19,19],bold:[rows2.length-1]},
+    {name:t('sheetModel'),rows:rows3,widths:[52,10,10],wrap:[0],bold:[rows3.length-1]}
   ]);
 }
 $('btnXlsx').onclick=function(){
@@ -11047,20 +11045,9 @@ function buildPrint(){
   h+='<h1>'+esc(t('pSumPO'))+'</h1><table class="t-sum"><thead><tr><th>'+esc(t('cPO'))+'</th><th>'+esc(t('cCust'))+'</th><th class="num">'+esc(t('cBoxes'))+'</th></tr></thead><tbody>';
   groupsByPO(items).forEach(function(g){ h+='<tr><td>'+esc(g.po)+'</td><td>'+esc(g.customer)+'</td><td class="num">'+g.items.length+'</td></tr>'; });
   h+='<tr class="tot"><td colspan="2">'+esc(t('pTotal'))+'</td><td class="num">'+items.length+'</td></tr></tbody></table>';
-  h+='<div class="pb"></div><h1>'+esc(t('pList'))+'</h1><table class="t-box"><thead><tr><th class="num">'+esc(t('pNo'))+'</th><th>'+esc(t('cBox'))+'</th><th>'+esc(t('cPO'))+'</th><th>'+esc(t('cCust'))+'</th><th>'+esc(t('cModel'))+'</th><th>'+esc(t('cQty'))+'</th><th>'+esc(t('pTime'))+'</th></tr></thead>';
-  items.forEach(function(i,n){
-    var mm=ml(i.model).split('\n'), qq=ml(i.qty).split('\n'), k=Math.max(mm.length,qq.length,1);
-    h+='<tbody class="bx">';
-    for(var q=0;q<k;q++){
-      h+='<tr'+(q?' class="sr"':'')+'>';
-      if(q===0) h+='<td class="num" rowspan="'+k+'">'+(n+1)+'</td><td rowspan="'+k+'">'+esc(i.box)+'</td><td rowspan="'+k+'">'+esc(i.po)+'</td><td rowspan="'+k+'">'+esc(i.customer)+'</td>';
-      h+='<td>'+esc(mm[q]||'')+'</td><td>'+esc(qq[q]||'')+'</td>';
-      if(q===0) h+='<td rowspan="'+k+'">'+esc((i.ts||'').slice(5,16))+'</td>';
-      h+='</tr>';
-    }
-    h+='</tbody>';
-  });
-  h+='<tbody><tr class="tot"><td colspan="6">'+esc(t('pTotal'))+'</td><td class="num">'+items.length+'</td></tr></tbody></table>';
+  h+='<div class="pb"></div><h1>'+esc(t('pList'))+'</h1><table class="t-box"><thead><tr><th class="num">'+esc(t('pNo'))+'</th><th>'+esc(t('cBox'))+'</th><th>'+esc(t('cPO'))+'</th><th>'+esc(t('cCust'))+'</th><th>'+esc(t('cModel'))+'</th><th>'+esc(t('cQty'))+'</th><th>'+esc(t('pTime'))+'</th></tr></thead><tbody>';
+  items.forEach(function(i,n){ h+='<tr><td class="num">'+(n+1)+'</td><td>'+esc(i.box)+'</td><td>'+esc(i.po)+'</td><td>'+esc(i.customer)+'</td><td>'+esc(ml(i.model)).replace(/\n/g,'<br>')+'</td><td>'+esc(ml(i.qty)).replace(/\n/g,'<br>')+'</td><td>'+esc((i.ts||'').slice(5,16))+'</td></tr>'; });
+  h+='<tr class="tot"><td colspan="6">'+esc(t('pTotal'))+'</td><td class="num">'+items.length+'</td></tr></tbody></table>';
   h+='<div class="sig"><div><div class="line"></div>'+esc(t('sigBy'))+'<br><span class="small">'+esc(by)+'</span><br><br>'+esc(t('sigDate'))+': ____ / ____ / ________</div><div><div class="line"></div>'+esc(t('sigSecond'))+'<br><br><br>'+esc(t('sigDate'))+': ____ / ____ / ________</div></div>';
   var head='<div class="lh-head"><img src="'+LOGO+'" alt=""><div class="l1">TIN: 4002009511307; CIN: 6455620; email: quality@ericorporation.com</div><div class="l2">Address: ERI Corporation DOOEL, str. Bursa, No. 124, P.box: 185, Bitola 7000, Republic of North Macedonia</div></div>';
   var foot='<div class="lh-foot">“ERI Corporation is a member of Volution Group, a leading international designer and manufacturer of energy efficient indoor air quality solutions”</div>';
@@ -11160,7 +11147,7 @@ function renderCompare(res){
     var b=el('button','btn','');  b.textContent=t('dlDiff'); b.style.marginTop='10px'; b.style.width='100%';
     b.onclick=function(){
       var rowsD=[[t('cProblem'),t('cBox'),t('cPO'),t('cCust'),t('cModel'),t('cByA'),t('cByB')]].concat(discRows(lastCmp).map(function(r){ r[4]=ml(r[4]); return r; }));
-      saveFile(fname('differences','xlsx'), buildXlsx([{name:t('sheetDiff'),rows:rowsD,widths:[34,9,fitW(rowsD.slice(1).map(function(r){return r[2];}),5,14,24),26,fitW(rowsD.slice(1).map(function(r){return r[4];}),3,30,70,1.15),16,16],wrap:[4]}]));
+      saveFile(fname('differences','xlsx'), buildXlsx([{name:t('sheetDiff'),rows:rowsD,widths:[34,14,14,26,48,16,16],wrap:[4]}]));
     };
     out.appendChild(b);
   }
