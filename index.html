@@ -194,6 +194,7 @@ details.more summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--m
   #printArea table.t-box th:nth-child(6){width:17mm}
   #printArea table.t-box th:nth-child(7){width:22mm}
   #printArea table.t-box{font-size:10.5px}
+  #printArea table.t-box td{vertical-align:top}
   #printArea table.t-sum th:nth-child(3){width:24mm}
 }
 
@@ -10458,8 +10459,8 @@ mk:{
  add:'Додај',
  manualHint:'Ако внесеш само број на кутија, другите податоци остануваат празни.',
  needName:'Прво внеси име', needNameD:'Впиши го твоето име во полето „Попишува“ пред да скенираш.',
- badCode:'Непознат или стар QR код', badCodeD:'Во кодот нема редови „Box No.“ и „PO No.“. Најверојатно е стара налепница – испечати нова. Прочитано: “{0}”',
- okBox:'Кутија {0}  (бр. {1})', okBoxD:'PO {0}  ·  {1}  ·  Qty {2}',
+ badCode:'Непознат или стар QR код', badCodeD:'Во кодот нема редови „Box No.“ и „OC No.“. Најверојатно е стара налепница – испечати нова. Прочитано: “{0}”',
+ okBox:'Кутија {0}  (бр. {1})', okBoxD:'OC {0}  ·  {1}  ·  Qty {2}',
  dup:'ДУПЛИКАТ – кутијата е веќе скенирана', dupD:'Кутија {0} е веќе скенирана на {1} (попишал: {2}). Не е додадена повторно.',
  ok:'OK',
  sure:'Дали сте сигурни?', yes:'Избриши', no:'Откажи',
@@ -10474,12 +10475,12 @@ mk:{
  photoReading:'Се чита фотографијата…',
  photoFail:'Нема QR код на фотографијата', photoFailD:'Фотографирај поблиску, QR кодот да зафаќа една третина од сликата, без рефлексија.',
  photoErr:'Фотографијата не може да се прочита', photoErrD:'Обиди се повторно или користи рачно внесување.',
- filterPh:'Барај кутија, PO, купувач, модел…',
- poGroup:'PO {0}', nBoxes:'{0} кут.', noMatch:'Нема совпаѓање.', noBoxes:'Сè уште нема скенирани кутии.',
- removeBox:'Отстрани кутија', sameFirst:'Исто PO:',
- stBoxes:'кутии', stPOs:'PO', stModels:'различни модели',
+ filterPh:'Барај кутија, OC, купувач, модел…',
+ poGroup:'OC {0}', nBoxes:'{0} кут.', noMatch:'Нема совпаѓање.', noBoxes:'Сè уште нема скенирани кутии.',
+ removeBox:'Отстрани кутија', sameFirst:'Исто OC:',
+ stBoxes:'кутии', stPOs:'OC', stModels:'различни модели',
  btnXlsx:'Преземи Excel (.xlsx) – 3 листа',
- xlsxHint:'Лист „Кутии“ = еден ред за секоја скенирана кутија. Лист „По PO“ = збир по PO. Лист „По модел“ = збир по модел. Препорачано: Excel ги чува вредностите како 3865/60 како текст.',
+ xlsxHint:'Лист „Кутии“ = еден ред за секоја скенирана кутија. Лист „По OC“ = збир по OC. Лист „По модел“ = збир по модел. Препорачано: Excel ги чува вредностите како 3865/60 како текст.',
  delim:'Одвојувач за CSV', delimSemi:'Точка-запирка ( ; ) – повеќето европски Excel', delimComma:'Запирка ( , )',
  csvBoxes:'CSV – кутии', csvNote:'Внимание: Excel може да претвори вредности како „3865/60“ во датум кога отвора CSV. Подобро користи .xlsx.',
  copy:'Копирај кутии за залепување во Excel',
@@ -10493,20 +10494,20 @@ mk:{
  listA:'Листа A', listB:'Листа B', pickFiles:'Избери Excel датотека(и)', useHere:'Користи ги податоците од овој телефон',
  noList:'Нема вчитана листа.', emptyList:'Листата е празна.', reading:'Се чита…', readErr:'Не може да се прочита: {0}',
  doCompare:'Спореди ги листите', needBoth:'Прво вчитај ги и двете листи.',
- info:'{0} кутии · {1} PO · попишал: {2}', noName:'(без име)', nFiles:' · {0} датотека(и)',
+ info:'{0} кутии · {1} OC · попишал: {2}', noName:'(без име)', nFiles:' · {0} датотека(и)',
  cmpSameName:'Двете листи го имаат истото име на попишувач ({0}). Дали навистина се броени независно?', cmpNoName:'Една листа нема име на попишувач.',
- check:'Провери', cmpTotalA:'A', cmpTotalB:'B', cmpMatch:'Совпаѓа', cmpOnlyA:'Само во A', cmpOnlyB:'Само во B', cmpPO:'Друго PO',
+ check:'Провери', cmpTotalA:'A', cmpTotalB:'B', cmpMatch:'Совпаѓа', cmpOnlyA:'Само во A', cmpOnlyB:'Само во B', cmpPO:'Друго OC',
  cmpDiffs:'{0} разлики за повторно броење', cmpDiffsD:'Провери ги овие кутии физички, па потпишете се двајцата.',
  cmpSame:'Двете листи се совпаѓаат', cmpSameD:'Секоја кутија е во двете листи.',
- secOnlyA:'Само во листа A', secOnlyB:'Само во листа B', secPO:'Различно PO за иста кутија',
+ secOnlyA:'Само во листа A', secOnlyB:'Само во листа B', secPO:'Различно OC за иста кутија',
  showing:'Се прикажуваат {0} од {1} (Excel датотеката ги содржи сите).',
  dlDiff:'Преземи ги разликите (Excel)',
- pLabelDate:'Датум на печатење', pLabelBy:'Попишал', pBoxes:'Кутии', pPOs:'PO',
- pSumPO:'Збир по PO', pList:'Листа на кутии', pNo:'Бр.', pTime:'Време', pTotal:'СИТЕ КУТИИ',
+ pLabelDate:'Датум на печатење', pLabelBy:'Попишал', pBoxes:'Кутии', pPOs:'OC',
+ pSumPO:'Збир по OC', pList:'Листа на кутии', pNo:'Бр.', pTime:'Време', pTotal:'СИТЕ КУТИИ',
  sigBy:'Попишал (име и потпис)', sigSecond:'Втор учесник (име и потпис)', sigDate:'Датум',
- cBox:'Бр. на кутија', cPO:'PO бр.', cCust:'Купувач', cModel:'Модел', cQty:'Количина', cTs:'Скенирано на', cBy:'Попишал',
- cBoxes:'Кутии', cFirst:'Прво скенирање', cLast:'Последно скенирање', cPOs:'Број на PO', cProblem:'Проблем', cByA:'Попишал (A)', cByB:'Попишал (B)',
- sheetBoxes:'Кутии', sheetPO:'По PO', sheetModel:'По модел', sheetDiff:'Разлики',
+ cBox:'Бр. на кутија', cPO:'OC бр.', cCust:'Купувач', cModel:'Модел', cQty:'Количина', cTs:'Скенирано на', cBy:'Попишал',
+ cBoxes:'Кутии', cFirst:'Прво скенирање', cLast:'Последно скенирање', cPOs:'Број на OC', cProblem:'Проблем', cByA:'Попишал (A)', cByB:'Попишал (B)',
+ sheetBoxes:'Кутии', sheetPO:'По OC', sheetModel:'По модел', sheetDiff:'Разлики',
  totalAll:'ВКУПНО',
  footStore:'Податоците се чуваат на овој телефон (во прелистувачот). Извезувај редовно.',
  footNoStore:'⚠ Овој прелистувач не ги зачувува податоците. Извези пред да ја затвориш страницата.',
@@ -10537,8 +10538,8 @@ en:{
  add:'Add',
  manualHint:'If you enter only a Box No., the other fields stay empty.',
  needName:'Enter your name first', needNameD:'Type your name in the “Counted by” field before scanning.',
- badCode:'Unknown or old QR code', badCodeD:'The code has no “Box No.” and “PO No.” lines. It is probably an old sticker – print a new one. Read: “{0}”',
- okBox:'Box {0}  (#{1})', okBoxD:'PO {0}  ·  {1}  ·  Qty {2}',
+ badCode:'Unknown or old QR code', badCodeD:'The code has no “Box No.” and “OC No.” lines. It is probably an old sticker – print a new one. Read: “{0}”',
+ okBox:'Box {0}  (#{1})', okBoxD:'OC {0}  ·  {1}  ·  Qty {2}',
  dup:'DUPLICATE – box already scanned', dupD:'Box {0} was already scanned on {1} (counted by {2}). Not added again.',
  ok:'OK',
  sure:'Are you sure?', yes:'Delete', no:'Cancel',
@@ -10553,12 +10554,12 @@ en:{
  photoReading:'Reading the photo…',
  photoFail:'No QR code in the photo', photoFailD:'Take the photo closer so the QR code fills about a third of the picture, without glare.',
  photoErr:'The photo cannot be read', photoErrD:'Try again or use manual entry.',
- filterPh:'Search box, PO, customer, model…',
- poGroup:'PO {0}', nBoxes:'{0} boxes', noMatch:'No match.', noBoxes:'No boxes scanned yet.',
- removeBox:'Remove box', sameFirst:'Same PO:',
+ filterPh:'Search box, OC, customer, model…',
+ poGroup:'OC {0}', nBoxes:'{0} boxes', noMatch:'No match.', noBoxes:'No boxes scanned yet.',
+ removeBox:'Remove box', sameFirst:'Same OC:',
  stBoxes:'boxes', stPOs:'POs', stModels:'different models',
  btnXlsx:'Download Excel (.xlsx) – 3 sheets',
- xlsxHint:'Sheet “Boxes” = one row per scanned box. Sheet “By PO” = totals per PO. Sheet “By model” = totals per model. Recommended: Excel keeps values like 3865/60 as text.',
+ xlsxHint:'Sheet “Boxes” = one row per scanned box. Sheet “By OC” = totals per OC. Sheet “By model” = totals per model. Recommended: Excel keeps values like 3865/60 as text.',
  delim:'CSV separator', delimSemi:'Semicolon ( ; ) – most European Excel', delimComma:'Comma ( , )',
  csvBoxes:'CSV – boxes', csvNote:'Note: Excel may turn values like “3865/60” into a date when opening a CSV. Prefer .xlsx.',
  copy:'Copy boxes to paste into Excel',
@@ -10574,18 +10575,18 @@ en:{
  doCompare:'Compare the lists', needBoth:'Load both lists first.',
  info:'{0} boxes · {1} POs · counted by: {2}', noName:'(no name)', nFiles:' · {0} file(s)',
  cmpSameName:'Both lists have the same counter name ({0}). Were they really counted independently?', cmpNoName:'One list has no counter name.',
- check:'Check', cmpTotalA:'A', cmpTotalB:'B', cmpMatch:'Match', cmpOnlyA:'Only in A', cmpOnlyB:'Only in B', cmpPO:'Other PO',
+ check:'Check', cmpTotalA:'A', cmpTotalB:'B', cmpMatch:'Match', cmpOnlyA:'Only in A', cmpOnlyB:'Only in B', cmpPO:'Other OC',
  cmpDiffs:'{0} differences to recount', cmpDiffsD:'Check these boxes physically, then both sign.',
  cmpSame:'The two lists match', cmpSameD:'Every box is in both lists.',
- secOnlyA:'Only in list A', secOnlyB:'Only in list B', secPO:'Different PO for the same box',
+ secOnlyA:'Only in list A', secOnlyB:'Only in list B', secPO:'Different OC for the same box',
  showing:'Showing {0} of {1} (the Excel file contains all).',
  dlDiff:'Download differences (Excel)',
  pLabelDate:'Print date', pLabelBy:'Counted by', pBoxes:'Boxes', pPOs:'POs',
- pSumPO:'Totals per PO', pList:'List of boxes', pNo:'No.', pTime:'Time', pTotal:'ALL BOXES',
+ pSumPO:'Totals per OC', pList:'List of boxes', pNo:'No.', pTime:'Time', pTotal:'ALL BOXES',
  sigBy:'Counted by (name and signature)', sigSecond:'Second participant (name and signature)', sigDate:'Date',
- cBox:'Box No.', cPO:'PO No.', cCust:'Customer', cModel:'Model', cQty:'Qty', cTs:'Scanned at', cBy:'Counted by',
+ cBox:'Box No.', cPO:'OC No.', cCust:'Customer', cModel:'Model', cQty:'Qty', cTs:'Scanned at', cBy:'Counted by',
  cBoxes:'Boxes', cFirst:'First scan', cLast:'Last scan', cPOs:'POs', cProblem:'Problem', cByA:'Counted by (A)', cByB:'Counted by (B)',
- sheetBoxes:'Boxes', sheetPO:'By PO', sheetModel:'By model', sheetDiff:'Differences',
+ sheetBoxes:'Boxes', sheetPO:'By OC', sheetModel:'By model', sheetDiff:'Differences',
  totalAll:'TOTAL',
  footStore:'Data is stored on this phone (in the browser). Export regularly.',
  footNoStore:'⚠ This browser does not save data. Export before closing the page.',
@@ -10617,13 +10618,14 @@ var pending = null, openSet = {}, lastText = '', lastSeen = 0;
 function $(id){ return document.getElementById(id); }
 function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
 function natCmp(x,y){ return String(x).localeCompare(String(y),'en',{numeric:true}); }
+function ml(v){ return String(v==null?'':v).replace(/\s*\|\s*/g,'\n'); }   // "A | B | C" -> one item per line
 function keyOf(box){ return String(box).trim().toUpperCase(); }
 function findBox(box){ var k=keyOf(box); for(var i=0;i<S.items.length;i++){ if(keyOf(S.items[i].box)===k) return S.items[i]; } return null; }
 function nPOs(items){ var m={}; items.forEach(function(i){ m[i.po]=1; }); return Object.keys(m).length; }
 
 /* ================= QR text parsing ================= */
 // Sticker text (labels are fixed English):
-//   PO No.: 26/4463 / Box No.: 3865/60 / Customer: ... / Model: A | B | C / Qty: 1 | 1 / (blank) / Manufacturer text (ignored)
+//   OC No. (older stickers: PO No.): 26/4463 / Box No.: 3865/60 / Customer: ... / Model: A | B | C / Qty: 1 | 1 / (blank) / Manufacturer text (ignored)
 var BOX_RE = /^[A-Za-z0-9][A-Za-z0-9._\/ -]{0,39}$/;
 function parseCode(text){
   var s = String(text||'').replace(/ /g,' ').replace(/\r/g,'');
@@ -10632,7 +10634,7 @@ function parseCode(text){
   s.split('\n').forEach(function(line){
     var m = /^\s*([^:]{1,20}?)\s*:\s*(.*?)\s*$/.exec(line); if(!m) return;
     var k = m[1].toLowerCase().replace(/[\s.]+/g,'');
-    if(k==='pono' && !r.po) r.po = m[2];
+    if((k==='ocno' || k==='pono') && !r.po) r.po = m[2];
     else if(k==='boxno' && !r.box) r.box = m[2];
     else if(k==='customer' && !r.customer) r.customer = m[2];
     else if(k==='model' && !r.model) r.model = m[2];
@@ -10945,31 +10947,72 @@ function saveFile(filename, data){
     note.textContent=t('saved',[filename]);
   }catch(e){ note.textContent=t('saveFail'); }
 }
-function setWidths(ws, w){ ws['!cols']=w.map(function(x){return {wch:x};}); }
-function xlsxBlob(items){
-  var wb=XLSX.utils.book_new();
-  var sorted=items.slice().sort(function(a,b){ return natCmp(a.po,b.po)||natCmp(a.box,b.box); });
-  var w1=XLSX.utils.aoa_to_sheet([cols()].concat(sorted.map(rowOf)));
-  setWidths(w1,[14,12,26,60,10,19,16]);
-  XLSX.utils.book_append_sheet(wb,w1,t('sheetBoxes'));
-  var rows2=[[t('cPO'),t('cCust'),t('cBoxes'),t('cFirst'),t('cLast')]];
-  groupsByPO(items).forEach(function(g){
-    var ts=g.items.map(function(i){return i.ts;}).sort();
-    rows2.push([g.po,g.customer,g.items.length,ts[0],ts[ts.length-1]]);
+/* ---- minimal .xlsx writer (needed for wrapped cells: one Model/Qty item per line) ---- */
+var CRC_T=null;
+function crc32(u){ if(!CRC_T){ CRC_T=[]; for(var n=0;n<256;n++){ var c=n; for(var k=0;k<8;k++) c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1); CRC_T[n]=c>>>0; } }
+  var c=0xFFFFFFFF; for(var i=0;i<u.length;i++) c=CRC_T[(c^u[i])&255]^(c>>>8); return (c^0xFFFFFFFF)>>>0; }
+function zipStore(files){
+  var enc=new TextEncoder(), parts=[], cd=[], off=0;
+  function u16(v){ return [v&255,(v>>8)&255]; } function u32(v){ return [v&255,(v>>8)&255,(v>>16)&255,(v>>>24)&255]; }
+  files.forEach(function(f){
+    var nm=enc.encode(f.name), data=enc.encode(f.data), crc=crc32(data);
+    var h=[].concat(u32(0x04034b50),u16(20),u16(0x0800),u16(0),u16(0),u16(0x21),u32(crc),u32(data.length),u32(data.length),u16(nm.length),u16(0));
+    parts.push(new Uint8Array(h),nm,data);
+    cd.push([].concat(u32(0x02014b50),u16(20),u16(20),u16(0x0800),u16(0),u16(0),u16(0x21),u32(crc),u32(data.length),u32(data.length),u16(nm.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(off)),Array.prototype.slice.call(nm));
+    off+=h.length+nm.length+data.length;
   });
+  var cdLen=0; cd.forEach(function(c){ parts.push(new Uint8Array(c)); cdLen+=c.length; });
+  parts.push(new Uint8Array([].concat(u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(cdLen),u32(off),u16(0))));
+  return new Blob(parts,{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+function xe(v){ return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,''); }
+function colL(n){ var s=''; n++; while(n>0){ var m=(n-1)%26; s=String.fromCharCode(65+m)+s; n=Math.floor((n-1)/26); } return s; }
+// sheets: [{name, rows:[[...]], widths:[...], wrap:[colIndexes with one item per line], bold:[rowIndexes]}]
+function buildXlsx(sheets){
+  var files=[];
+  files.push({name:'[Content_Types].xml',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>'+sheets.map(function(x,i){ return '<Override PartName="/xl/worksheets/sheet'+(i+1)+'.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>'; }).join('')+'</Types>'});
+  files.push({name:'_rels/.rels',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'});
+  files.push({name:'xl/workbook.xml',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>'+sheets.map(function(x,i){ return '<sheet name="'+xe(x.name)+'" sheetId="'+(i+1)+'" r:id="rId'+(i+1)+'"/>'; }).join('')+'</sheets></workbook>'});
+  files.push({name:'xl/_rels/workbook.xml.rels',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+sheets.map(function(x,i){ return '<Relationship Id="rId'+(i+1)+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet'+(i+1)+'.xml"/>'; }).join('')+'<Relationship Id="rId'+(sheets.length+1)+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'});
+  // styles: 0 normal(top), 1 wrap(top), 2 header(bold, grey, wrap), 3 bold total
+  files.push({name:'xl/styles.xml',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFE6E6E6"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="4"><xf numFmtId="49" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1" applyAlignment="1"><alignment vertical="top"/></xf><xf numFmtId="49" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1" applyAlignment="1"><alignment vertical="top"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>'});
+  sheets.forEach(function(sh,si){
+    var wrap=sh.wrap||[], bold=sh.bold||[];
+    var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="15"/>';
+    if(sh.widths) x+='<cols>'+sh.widths.map(function(w,i){ return '<col min="'+(i+1)+'" max="'+(i+1)+'" width="'+w+'" customWidth="1"/>'; }).join('')+'</cols>';
+    x+='<sheetData>';
+    sh.rows.forEach(function(row,ri){
+      x+='<row r="'+(ri+1)+'">';
+      row.forEach(function(v,ci){
+        if(v===null||v===undefined||v==='') return;
+        var ref=colL(ci)+(ri+1), st = ri===0 ? 2 : (bold.indexOf(ri)>=0 ? 3 : (wrap.indexOf(ci)>=0 ? 1 : 0));
+        if(typeof v==='number' && ri>0) x+='<c r="'+ref+'" s="'+(bold.indexOf(ri)>=0?3:0)+'"><v>'+v+'</v></c>';
+        else x+='<c r="'+ref+'" s="'+st+'" t="inlineStr"><is><t xml:space="preserve">'+xe(v)+'</t></is></c>';
+      });
+      x+='</row>';
+    });
+    x+='</sheetData></worksheet>';
+    files.push({name:'xl/worksheets/sheet'+(si+1)+'.xml',data:x});
+  });
+  return zipStore(files);
+}
+function xlsxBlob(items){
+  var sorted=items.slice().sort(function(a,b){ return natCmp(a.po,b.po)||natCmp(a.box,b.box); });
+  var s1=[cols()].concat(sorted.map(function(i){ var r=rowOf(i); r[3]=ml(r[3]); r[4]=ml(r[4]); return r; }));
+  var rows2=[[t('cPO'),t('cCust'),t('cBoxes'),t('cFirst'),t('cLast')]];
+  groupsByPO(items).forEach(function(g){ var ts=g.items.map(function(i){return i.ts;}).sort(); rows2.push([g.po,g.customer,g.items.length,ts[0],ts[ts.length-1]]); });
   rows2.push([t('totalAll'),'',items.length,'','']);
-  var w2=XLSX.utils.aoa_to_sheet(rows2); setWidths(w2,[14,26,10,19,19]);
-  XLSX.utils.book_append_sheet(wb,w2,t('sheetPO'));
   var byM={}, ord=[];
   items.forEach(function(i){ var k=i.model||'—'; if(!byM[k]){byM[k]={n:0,po:{}}; ord.push(k);} byM[k].n++; byM[k].po[i.po]=1; });
   ord.sort(natCmp);
   var rows3=[[t('cModel'),t('cBoxes'),t('cPOs')]];
-  ord.forEach(function(k){ rows3.push([k,byM[k].n,Object.keys(byM[k].po).length]); });
+  ord.forEach(function(k){ rows3.push([ml(k),byM[k].n,Object.keys(byM[k].po).length]); });
   rows3.push([t('totalAll'),items.length,nPOs(items)]);
-  var w3=XLSX.utils.aoa_to_sheet(rows3); setWidths(w3,[70,10,10]);
-  XLSX.utils.book_append_sheet(wb,w3,t('sheetModel'));
-  var out=XLSX.write(wb,{bookType:'xlsx',type:'array'});
-  return new Blob([out],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+  return buildXlsx([
+    {name:t('sheetBoxes'),rows:s1,widths:[14,14,26,48,10,19,16],wrap:[3,4]},
+    {name:t('sheetPO'),rows:rows2,widths:[14,26,10,19,19],bold:[rows2.length-1]},
+    {name:t('sheetModel'),rows:rows3,widths:[52,10,10],wrap:[0],bold:[rows3.length-1]}
+  ]);
 }
 $('btnXlsx').onclick=function(){
   if(!S.items.length){ $('exportNote').textContent=t('noData'); return; }
@@ -10999,7 +11042,7 @@ function buildPrint(){
   groupsByPO(items).forEach(function(g){ h+='<tr><td>'+esc(g.po)+'</td><td>'+esc(g.customer)+'</td><td class="num">'+g.items.length+'</td></tr>'; });
   h+='<tr class="tot"><td colspan="2">'+esc(t('pTotal'))+'</td><td class="num">'+items.length+'</td></tr></tbody></table>';
   h+='<div class="pb"></div><h1>'+esc(t('pList'))+'</h1><table class="t-box"><thead><tr><th class="num">'+esc(t('pNo'))+'</th><th>'+esc(t('cBox'))+'</th><th>'+esc(t('cPO'))+'</th><th>'+esc(t('cCust'))+'</th><th>'+esc(t('cModel'))+'</th><th>'+esc(t('cQty'))+'</th><th>'+esc(t('pTime'))+'</th></tr></thead><tbody>';
-  items.forEach(function(i,n){ h+='<tr><td class="num">'+(n+1)+'</td><td>'+esc(i.box)+'</td><td>'+esc(i.po)+'</td><td>'+esc(i.customer)+'</td><td>'+esc(i.model)+'</td><td>'+esc(i.qty)+'</td><td>'+esc((i.ts||'').slice(5,16))+'</td></tr>'; });
+  items.forEach(function(i,n){ h+='<tr><td class="num">'+(n+1)+'</td><td>'+esc(i.box)+'</td><td>'+esc(i.po)+'</td><td>'+esc(i.customer)+'</td><td>'+esc(ml(i.model)).replace(/\n/g,'<br>')+'</td><td>'+esc(ml(i.qty)).replace(/\n/g,'<br>')+'</td><td>'+esc((i.ts||'').slice(5,16))+'</td></tr>'; });
   h+='<tr class="tot"><td colspan="6">'+esc(t('pTotal'))+'</td><td class="num">'+items.length+'</td></tr></tbody></table>';
   h+='<div class="sig"><div><div class="line"></div>'+esc(t('sigBy'))+'<br><span class="small">'+esc(by)+'</span><br><br>'+esc(t('sigDate'))+': ____ / ____ / ________</div><div><div class="line"></div>'+esc(t('sigSecond'))+'<br><br><br>'+esc(t('sigDate'))+': ____ / ____ / ________</div></div>';
   var head='<div class="lh-head"><img src="'+LOGO+'" alt=""><div class="l1">TIN: 4002009511307; CIN: 6455620; email: quality@ericorporation.com</div><div class="l2">Address: ERI Corporation DOOEL, str. Bursa, No. 124, P.box: 185, Bitola 7000, Republic of North Macedonia</div></div>';
@@ -11025,7 +11068,7 @@ async function readFiles(files){
     for(var q=1;q<arr.length;q++){
       var r=arr[q]; var box=String(r[0]||'').trim();
       if(!box) continue;
-      rows.push({box:box.toUpperCase(),po:String(r[1]||'').trim(),customer:String(r[2]||''),model:String(r[3]||''),qty:String(r[4]||''),ts:String(r[5]||''),by:String(r[6]||'').trim()});
+      rows.push({box:box.toUpperCase(),po:String(r[1]||'').trim(),customer:String(r[2]||''),model:String(r[3]||'').replace(/\s*[\r\n]+\s*/g,' | '),qty:String(r[4]||'').replace(/\s*[\r\n]+\s*/g,' | '),ts:String(r[5]||''),by:String(r[6]||'').trim()});
     }
   }
   return rows;
@@ -11093,18 +11136,14 @@ function renderCompare(res){
     if(rows.length>300) body.appendChild(el('div','hint',t('showing',[300,rows.length])));
     d.appendChild(body); out.appendChild(d); d.open=true;
   }
-  section(t('secOnlyA'),res.onlyA,function(x,a){ a.appendChild(el('div','mono',x.a.box)); a.appendChild(el('div','muted','PO '+x.a.po+' · '+x.a.customer)); });
-  section(t('secOnlyB'),res.onlyB,function(x,a){ a.appendChild(el('div','mono',x.b.box)); a.appendChild(el('div','muted','PO '+x.b.po+' · '+x.b.customer)); });
+  section(t('secOnlyA'),res.onlyA,function(x,a){ a.appendChild(el('div','mono',x.a.box)); a.appendChild(el('div','muted','OC '+x.a.po+' · '+x.a.customer)); });
+  section(t('secOnlyB'),res.onlyB,function(x,a){ a.appendChild(el('div','mono',x.b.box)); a.appendChild(el('div','muted','OC '+x.b.po+' · '+x.b.customer)); });
   section(t('secPO'),res.diffPO,function(x,a){ a.appendChild(el('div','mono',x.a.box)); a.appendChild(el('div','muted','A: '+x.a.po+' · B: '+x.b.po)); });
   if(disc.length){
     var b=el('button','btn','');  b.textContent=t('dlDiff'); b.style.marginTop='10px'; b.style.width='100%';
     b.onclick=function(){
-      var wb=XLSX.utils.book_new();
-      var ws=XLSX.utils.aoa_to_sheet([[t('cProblem'),t('cBox'),t('cPO'),t('cCust'),t('cModel'),t('cByA'),t('cByB')]].concat(discRows(lastCmp)));
-      setWidths(ws,[34,14,12,26,60,16,16]);
-      XLSX.utils.book_append_sheet(wb,ws,t('sheetDiff'));
-      var o=XLSX.write(wb,{bookType:'xlsx',type:'array'});
-      saveFile(fname('differences','xlsx'), new Blob([o],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}));
+      var rowsD=[[t('cProblem'),t('cBox'),t('cPO'),t('cCust'),t('cModel'),t('cByA'),t('cByB')]].concat(discRows(lastCmp).map(function(r){ r[4]=ml(r[4]); return r; }));
+      saveFile(fname('differences','xlsx'), buildXlsx([{name:t('sheetDiff'),rows:rowsD,widths:[34,14,14,26,48,16,16],wrap:[4]}]));
     };
     out.appendChild(b);
   }
