@@ -196,6 +196,13 @@ details.more summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--m
   #printArea table.t-box{font-size:10.5px}
   #printArea table.t-box td{vertical-align:top}
   #printArea table.t-sum th:nth-child(3){width:24mm}
+  #printArea table.t-cust{font-size:11px}
+  #printArea table.t-cust td:nth-child(1){width:44mm}
+  #printArea table.t-cust td:nth-child(3){width:22mm}
+  #printArea table.t-cust tr.hd td{background:#e6e6e6;font-weight:700}
+  #printArea table.t-cust td{vertical-align:top}
+  #printArea table.t-cust tr.cust td{background:#e6e6e6;font-weight:700;font-size:12px}
+  #printArea .small{font-size:10px;margin:0 0 6px}
 }
 
 </style>
@@ -10480,7 +10487,7 @@ mk:{
  removeBox:'Отстрани кутија', sameFirst:'Исто OC:',
  stBoxes:'кутии', stPOs:'OC', stModels:'различни модели',
  btnXlsx:'Преземи Excel (.xlsx) – 3 листа',
- xlsxHint:'Лист „Кутии“ = еден ред за секоја скенирана кутија. Лист „По OC“ = збир по OC. Лист „По модел“ = збир по модел. Препорачано: Excel ги чува вредностите како 3865/60 како текст.',
+ xlsxHint:'Лист „Кутии“ = еден ред за секоја скенирана кутија. Лист „По OC“ = збир по OC. Лист „По купувач“ = купувач → OC (од најмало до најголемо) со кутиите, редоследот на скенирање и вкупен број кутии. Препорачано: Excel ги чува вредностите како 3865/60 како текст.',
  delim:'Одвојувач за CSV', delimSemi:'Точка-запирка ( ; ) – повеќето европски Excel', delimComma:'Запирка ( , )',
  csvBoxes:'CSV – кутии', csvNote:'Внимание: Excel може да претвори вредности како „3865/60“ во датум кога отвора CSV. Подобро користи .xlsx.',
  copy:'Копирај кутии за залепување во Excel',
@@ -10503,11 +10510,11 @@ mk:{
  showing:'Се прикажуваат {0} од {1} (Excel датотеката ги содржи сите).',
  dlDiff:'Преземи ги разликите (Excel)',
  pLabelDate:'Датум на печатење', pLabelBy:'Попишал', pBoxes:'Кутии', pPOs:'OC',
- pSumPO:'Збир по OC', pList:'Листа на кутии', pNo:'Бр.', pTime:'Време', pTotal:'СИТЕ КУТИИ',
+ pSumPO:'Преглед по купувач и OC', pSeqNote:'Во загради: # = редослед на скенирање. Кутија со повеќе OC е прикажана само еднаш (со сите OC) и се брои еднаш.', cBoxSeq:'Бр. на кутија (# скенирање)', cTotBoxes:'Вкупно кутии', pList:'Листа на кутии', pNo:'Бр.', pTime:'Време', pTotal:'СИТЕ КУТИИ',
  sigBy:'Попишал (име и потпис)', sigSecond:'Втор учесник (име и потпис)', sigDate:'Датум',
  cBox:'Бр. на кутија', cPO:'OC бр.', cCust:'Купувач', cModel:'Модел', cQty:'Количина', cTs:'Скенирано на', cBy:'Попишал',
  cBoxes:'Кутии', cFirst:'Прво скенирање', cLast:'Последно скенирање', cPOs:'Број на OC', cProblem:'Проблем', cByA:'Попишал (A)', cByB:'Попишал (B)',
- sheetBoxes:'Кутии', sheetPO:'По OC', sheetModel:'По модел', sheetDiff:'Разлики',
+ sheetBoxes:'Кутии', sheetPO:'По OC', sheetCust:'По купувач', sheetDiff:'Разлики',
  totalAll:'ВКУПНО',
  footStore:'Податоците се чуваат на овој телефон (во прелистувачот). Извезувај редовно.',
  footNoStore:'⚠ Овој прелистувач не ги зачувува податоците. Извези пред да ја затвориш страницата.',
@@ -10559,7 +10566,7 @@ en:{
  removeBox:'Remove box', sameFirst:'Same OC:',
  stBoxes:'boxes', stPOs:'POs', stModels:'different models',
  btnXlsx:'Download Excel (.xlsx) – 3 sheets',
- xlsxHint:'Sheet “Boxes” = one row per scanned box. Sheet “By OC” = totals per OC. Sheet “By model” = totals per model. Recommended: Excel keeps values like 3865/60 as text.',
+ xlsxHint:'Sheet “Boxes” = one row per scanned box. Sheet “By OC” = totals per OC. Sheet “By customer” = customer → OC (lowest to highest) with the boxes, scan order and total number of boxes. Recommended: Excel keeps values like 3865/60 as text.',
  delim:'CSV separator', delimSemi:'Semicolon ( ; ) – most European Excel', delimComma:'Comma ( , )',
  csvBoxes:'CSV – boxes', csvNote:'Note: Excel may turn values like “3865/60” into a date when opening a CSV. Prefer .xlsx.',
  copy:'Copy boxes to paste into Excel',
@@ -10582,11 +10589,11 @@ en:{
  showing:'Showing {0} of {1} (the Excel file contains all).',
  dlDiff:'Download differences (Excel)',
  pLabelDate:'Print date', pLabelBy:'Counted by', pBoxes:'Boxes', pPOs:'POs',
- pSumPO:'Totals per OC', pList:'List of boxes', pNo:'No.', pTime:'Time', pTotal:'ALL BOXES',
+ pSumPO:'Overview by customer and OC', pSeqNote:'In brackets: # = scanning sequence number. A box with several OCs is shown once (with all its OCs) and counted once.', cBoxSeq:'Box no. (# scan order)', cTotBoxes:'Total boxes', pList:'List of boxes', pNo:'No.', pTime:'Time', pTotal:'ALL BOXES',
  sigBy:'Counted by (name and signature)', sigSecond:'Second participant (name and signature)', sigDate:'Date',
  cBox:'Box No.', cPO:'OC No.', cCust:'Customer', cModel:'Model', cQty:'Qty', cTs:'Scanned at', cBy:'Counted by',
  cBoxes:'Boxes', cFirst:'First scan', cLast:'Last scan', cPOs:'POs', cProblem:'Problem', cByA:'Counted by (A)', cByB:'Counted by (B)',
- sheetBoxes:'Boxes', sheetPO:'By OC', sheetModel:'By model', sheetDiff:'Differences',
+ sheetBoxes:'Boxes', sheetPO:'By OC', sheetCust:'By customer', sheetDiff:'Differences',
  totalAll:'TOTAL',
  footStore:'Data is stored on this phone (in the browser). Export regularly.',
  footNoStore:'⚠ This browser does not save data. Export before closing the page.',
@@ -10743,6 +10750,34 @@ function groupsByPO(items){
   items.forEach(function(i){ var k=i.po||'—'; if(!map[k]){ map[k]={po:k,customer:i.customer,items:[]}; order.push(k); } map[k].items.push(i); });
   order.sort(natCmp);
   return order.map(function(k){ return map[k]; });
+}
+/* customer -> OC report. A box with several OCs is ONE entry (shown once, counted once). */
+function ocList(po){
+  var seen={}, out=[];
+  String(po||'').split(/[\s;,|]+/).forEach(function(x){ x=x.trim(); if(x && !seen[x]){ seen[x]=1; out.push(x); } });
+  out.sort(natCmp);
+  return out.length?out:['—'];
+}
+function cmpOcLists(a,b){
+  for(var i=0;i<Math.min(a.length,b.length);i++){ var c=natCmp(a[i],b[i]); if(c) return c; }
+  return a.length-b.length;
+}
+function buildCustReport(items){
+  var cm={}, order=[];
+  items.forEach(function(it,idx){
+    var name=String(it.customer||'').trim()||'—', ck=name.toLowerCase();
+    if(!cm[ck]){ cm[ck]={cust:name,lines:{},n:0}; order.push(ck); }
+    var c=cm[ck], ocs=ocList(it.po), lk=ocs.join('; ');
+    if(!c.lines[lk]) c.lines[lk]={ocs:ocs,ocText:lk,boxes:[]};
+    c.lines[lk].boxes.push({box:it.box,seq:idx+1}); c.n++;
+  });
+  order.sort(function(a,b){ return cm[a].cust.localeCompare(cm[b].cust,'en',{numeric:true,sensitivity:'base'}); });
+  return order.map(function(ck){
+    var c=cm[ck], lines=Object.keys(c.lines).map(function(k){ var l=c.lines[k]; l.boxes.sort(function(a,b){ return natCmp(a.box,b.box); }); l.count=l.boxes.length;
+      l.boxText=l.boxes.map(function(b){ return b.box+' (#'+b.seq+')'; }).join(', '); return l; });
+    lines.sort(function(a,b){ return cmpOcLists(a.ocs,b.ocs); });
+    return {cust:c.cust,lines:lines,total:c.n};
+  });
 }
 function renderBoxes(){
   var box=$('palletList'); box.textContent='';
@@ -11006,16 +11041,13 @@ function xlsxBlob(items){
   var rows2=[[t('cPO'),t('cCust'),t('cBoxes'),t('cFirst'),t('cLast')]];
   groupsByPO(items).forEach(function(g){ var ts=g.items.map(function(i){return i.ts;}).sort(); rows2.push([g.po,g.customer,g.items.length,ts[0],ts[ts.length-1]]); });
   rows2.push([t('totalAll'),'',items.length,'','']);
-  var byM={}, ord=[];
-  items.forEach(function(i){ var k=i.model||'—'; if(!byM[k]){byM[k]={n:0,po:{}}; ord.push(k);} byM[k].n++; byM[k].po[i.po]=1; });
-  ord.sort(natCmp);
-  var rows3=[[t('cModel'),t('cBoxes'),t('cPOs')]];
-  ord.forEach(function(k){ rows3.push([ml(k),byM[k].n,Object.keys(byM[k].po).length]); });
-  rows3.push([t('totalAll'),items.length,nPOs(items)]);
+  var rows3=[[t('cCust'),t('cPO'),t('cBoxSeq'),t('cTotBoxes')]];
+  buildCustReport(items).forEach(function(c){ c.lines.forEach(function(l){ rows3.push([c.cust,l.ocText,l.boxText,l.count]); }); });
+  rows3.push([t('totalAll'),'','',items.length]);
   return buildXlsx([
     {name:t('sheetBoxes'),rows:s1,widths:[14,14,26,48,10,19,16],wrap:[3,4]},
     {name:t('sheetPO'),rows:rows2,widths:[14,26,10,19,19],bold:[rows2.length-1]},
-    {name:t('sheetModel'),rows:rows3,widths:[52,10,10],wrap:[0],bold:[rows3.length-1]}
+    {name:t('sheetCust'),rows:rows3,widths:[30,26,60,12],wrap:[1,2],bold:[rows3.length-1]}
   ]);
 }
 $('btnXlsx').onclick=function(){
@@ -11042,8 +11074,11 @@ var LOGO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnEAAABcCAIAAACOQnSuAA
 function buildPrint(){
   var items=sortedItems(), by=(S.by||'').trim();
   var h='<div class="doc-title">'+esc(t('title'))+'</div><div class="meta">'+esc(t('pLabelDate'))+': <b>'+today()+'</b> &nbsp;|&nbsp; '+esc(t('pLabelBy'))+': <b>'+esc(by||'________________')+'</b> &nbsp;|&nbsp; '+esc(t('pBoxes'))+': <b>'+items.length+'</b> &nbsp;|&nbsp; '+esc(t('pPOs'))+': <b>'+nPOs(items)+'</b></div>';
-  h+='<h1>'+esc(t('pSumPO'))+'</h1><table class="t-sum"><thead><tr><th>'+esc(t('cPO'))+'</th><th>'+esc(t('cCust'))+'</th><th class="num">'+esc(t('cBoxes'))+'</th></tr></thead><tbody>';
-  groupsByPO(items).forEach(function(g){ h+='<tr><td>'+esc(g.po)+'</td><td>'+esc(g.customer)+'</td><td class="num">'+g.items.length+'</td></tr>'; });
+  h+='<h1>'+esc(t('pSumPO'))+'</h1><div class="small">'+esc(t('pSeqNote'))+'</div><table class="t-cust"><tbody><tr class="hd"><td>'+esc(t('cPO'))+'</td><td>'+esc(t('cBoxSeq'))+'</td><td class="num">'+esc(t('cTotBoxes'))+'</td></tr>';
+  buildCustReport(S.items).forEach(function(c){
+    h+='<tr class="cust"><td colspan="2">'+esc(t('cCust'))+': '+esc(c.cust)+'</td><td class="num">'+c.total+'</td></tr>';
+    c.lines.forEach(function(l){ h+='<tr><td>'+esc(l.ocText)+'</td><td>'+esc(l.boxText)+'</td><td class="num">'+l.count+'</td></tr>'; });
+  });
   h+='<tr class="tot"><td colspan="2">'+esc(t('pTotal'))+'</td><td class="num">'+items.length+'</td></tr></tbody></table>';
   h+='<div class="pb"></div><h1>'+esc(t('pList'))+'</h1><table class="t-box"><thead><tr><th class="num">'+esc(t('pNo'))+'</th><th>'+esc(t('cBox'))+'</th><th>'+esc(t('cPO'))+'</th><th>'+esc(t('cCust'))+'</th><th>'+esc(t('cModel'))+'</th><th>'+esc(t('cQty'))+'</th><th>'+esc(t('pTime'))+'</th></tr></thead><tbody>';
   items.forEach(function(i,n){ h+='<tr><td class="num">'+(n+1)+'</td><td>'+esc(i.box)+'</td><td>'+esc(i.po)+'</td><td>'+esc(i.customer)+'</td><td>'+esc(ml(i.model)).replace(/\n/g,'<br>')+'</td><td>'+esc(ml(i.qty)).replace(/\n/g,'<br>')+'</td><td>'+esc((i.ts||'').slice(5,16))+'</td></tr>'; });
